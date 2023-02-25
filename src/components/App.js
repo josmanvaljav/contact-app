@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import {BrowserRouter as Router, Routes, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, HashRouter, Switch} from 'react-router-dom';
 import {v4 as uuid} from 'uuid';
 import api from "../api/contacts";
-import './App.css';
+//import './App.css';
 import { Header } from './Header';
 import { AddContact } from './AddContact';
 import { ContactList } from './ContactList';
@@ -100,7 +100,7 @@ function App() {
     } else {
       setSearchResults(contacts);
     }
-  }
+  };
   
 
   // Working with localstorage
@@ -130,9 +130,10 @@ function App() {
     }, 1000);
   }, [contacts]);
 
+
   return (
     <div className="ui container">
-      <Router>
+      <HashRouter>
         <Header />
         <Routes>
           <Route 
@@ -142,7 +143,8 @@ function App() {
               removeContactHandler={removeContactHandler}
               term={searchTerm}
               searchKeyWord={searchHandler}
-            />} />
+            />} 
+          />
           <Route 
             path="/add" 
             element={<AddContact addContactHandler={addContactHandler}/>} 
@@ -153,7 +155,7 @@ function App() {
           />
           <Route path="/contact/:id" element={<ContactDetail />} />
         </Routes>
-      </Router>
+      </HashRouter>
     </div>
   );
 }

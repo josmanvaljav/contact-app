@@ -18,7 +18,7 @@ Notes:
 
 For Deploy:
 1) Run: npm install gh-pages --save-dev
-2) At the end of package.json add: , "homepage": "https://josmanvaljav.github.io/todo-list-app"
+2) At the end of package.json add: , "homepage": "https://josmanvaljav.github.io/contact-app"
 3) At package.json add in scripts section add: "predeploy": "npm run build" and "deploy": "gh-pages -d build"
 4) Run: npm run deploy
 
