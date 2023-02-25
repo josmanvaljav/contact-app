@@ -1,3 +1,30 @@
+Notes:
+- we installed "react-router-dom" for working with URL routes or paths.
+        npm install react-router-dom
+- We installed "uuidv4" for generating random ids.
+        npm install uuidv4
+- We use localstorage but we commened this code and then create a JSON Server for for fake API. For that we created a folder named "server-api" and there we installed the server.
+        - First create a package.json file:
+            npm init --yes
+        - Second install the json-server:
+            npm install json-server
+  For run the server we modified the package.json file with:
+        "scripts": {
+            "start": "json-server --watch db.json --port 3031"
+        },
+- Install "axios" to work with the API.
+        npm install --save axios
+
+
+For Deploy:
+1) Run: npm install gh-pages --save-dev
+2) At the end of package.json add: , "homepage": "https://josmanvaljav.github.io/todo-list-app"
+3) At package.json add in scripts section add: "predeploy": "npm run build" and "deploy": "gh-pages -d build"
+4) Run: npm run deploy
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
